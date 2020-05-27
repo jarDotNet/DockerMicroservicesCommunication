@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  clientservice:
+    image: ${DOCKER_REGISTRY-}clientservice
+    container_name: clientservice 
+    build:
+      context: .
+      dockerfile: ClientService/Dockerfile
+networks:  
+    default:  
+        external:  
+            name:  jar-container-network 

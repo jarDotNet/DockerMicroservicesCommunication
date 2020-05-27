@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  apiservice:
+    image: ${DOCKER_REGISTRY-}apiservice
+    container_name: apiservice 
+
+    build:
+      context: .
+      dockerfile: ApiService/Dockerfile
+networks:  
+    default:  
+        external:  
+            name:  jar-container-network 
