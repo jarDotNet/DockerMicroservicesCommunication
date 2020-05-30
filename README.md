@@ -214,6 +214,8 @@ services:
   apiservice:
     image: ${DOCKER_REGISTRY-}apiservice
     container_name: apiservice
+    ports:
+        - "32772:32773"
 
     build:
       context: .
